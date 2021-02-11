@@ -20,14 +20,17 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class MenuUserControl : UserControl
     {
+        private LoginWindow loginWindow;
         public MenuUserControl()
         {
             InitializeComponent();
+
+            loginWindow = new LoginWindow();
         }
 
         private void btnLogInAndOut_Click(object sender, RoutedEventArgs e)
         {
-
+            loginWindow.Visibility = Visibility.Visible;
         }
 
         private void btnFindReagent_Click(object sender, RoutedEventArgs e)

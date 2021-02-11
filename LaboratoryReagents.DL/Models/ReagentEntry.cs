@@ -14,6 +14,6 @@ namespace LaboratoryReagents.DL.Models
         public virtual Location Location { get; set; }
         public double Quantity { get; set; }
         public string Comments { get; set; }
-
+       
     }
 }

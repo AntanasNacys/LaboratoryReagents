@@ -11,9 +11,18 @@
             <ColumnDefinition Width="150"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
+
+        <StackPanel Height="120"
+                    VerticalAlignment="Top" Margin="10,0,15,0">
+            <Image Height="130"
+                   Width="130"
+                   Source="logo3.png">
+            </Image>
+        </StackPanel>
+
         <local:MenuUserControl x:Name="MenuUserControl"
                                Grid.Column="0"
-                               Margin="0 100 0 0">
+                               Margin="0,136,0,29">
         </local:MenuUserControl>
     </Grid>
 </Window>

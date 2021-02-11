@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace LaboratoryReagents.DL.Models
 {
@@ -11,6 +12,7 @@ namespace LaboratoryReagents.DL.Models
         [MaxLength(20)]
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
+        
 
     }
 }

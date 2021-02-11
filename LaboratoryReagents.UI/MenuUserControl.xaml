@@ -17,6 +17,7 @@
                 Content="Log In"
                 FontSize="20"
                 Margin="0 30 0 0"
+                FontWeight="Bold"
                 Click="btnLogInAndOut_Click">
         </Button>
         <Button x:Name="btnFindReagent"

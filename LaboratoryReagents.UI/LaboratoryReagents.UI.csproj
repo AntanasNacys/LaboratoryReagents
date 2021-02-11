@@ -65,6 +65,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FindInLabUserControl.xaml.cs">
+      <DependentUpon>FindInLabUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FindReagentUserControl.xaml.cs">
+      <DependentUpon>FindReagentUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AllReagentUserControl.xaml.cs">
+      <DependentUpon>AllReagentUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="FindInLabUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FindReagentUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -85,6 +102,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MenuUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AllReagentUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,6 +149,9 @@
       <Project>{b7c245ac-1c91-45cd-9288-a7b4ba516bac}</Project>
       <Name>LaboratoryReagents.DL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

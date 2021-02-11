@@ -39,7 +39,7 @@ namespace LaboratoryReagents.BL.Services
                     return;
 
                 ctx.Entry(oldEntry).CurrentValues.SetValues(entry);
-                //pasiaiskint del Entry.
+                
                 ctx.SaveChanges();
             }
         }
@@ -64,7 +64,7 @@ namespace LaboratoryReagents.BL.Services
                     .Include(x => x.ReagentName)
                     .Include(x => x.Location)
                     .ToList();
-                //ar cia gerai, ar reiktu kazka keisti ir prideti koki Quantity.
+                
             }
             return reagentEntriesList;
         }
