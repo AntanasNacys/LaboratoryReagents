@@ -54,6 +54,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IReagentEntryManager.cs" />
+    <Compile Include="Interfaces\IUserManager.cs" />
+    <Compile Include="Interfaces\IReagentNameManager.cs" />
     <Compile Include="Services\ReagentEntryManager.cs" />
     <Compile Include="Services\ReagentNameManager.cs" />
     <Compile Include="Services\UserManager.cs" />

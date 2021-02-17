@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace LaboratoryReagents.BL.Services
 {
-    public class UserManager
+    public class UserManager : IUserManager
     {
         public List<User> GetAll()
         {

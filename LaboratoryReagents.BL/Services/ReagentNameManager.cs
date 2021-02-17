@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace LaboratoryReagents.BL.Services
 {
-    public class ReagentNameManager
+    public class ReagentNameManager : IReagentNameManager
     {
-        public int AddReagentName (ReagentName nameEntry)
+        public int AddReagentName(ReagentName nameEntry)
         {
             int entryKey;
             using (var ctx = new ReagentContext())
@@ -18,7 +18,7 @@ namespace LaboratoryReagents.BL.Services
             }
             return entryKey;
         }
-        public void DeleteReagentName (int entryKey)
+        public void DeleteReagentName(int entryKey)
         {
             ReagentName nameEntry;
             using (var ctx = new ReagentContext())

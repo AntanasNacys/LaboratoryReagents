@@ -23,6 +23,11 @@ namespace LaboratoryReagents.UI
         public MainWindow()
         {
             InitializeComponent();
+            MenuUserControl.btnLogOut_ClickHandler += btnLogOut_Click;
+        }
+        private void btnLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            MenuUserControl.UserOn = null;
         }
     }
 }

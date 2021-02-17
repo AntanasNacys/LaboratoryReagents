@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaboratoryReagents.UI"
         mc:Ignorable="d"
-        Title="Log In Window" Height="300" Width="350">
+        Title="Log In Window" Height="300" Width="350" Closing="logInWindowClosing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"></RowDefinition>
@@ -56,13 +56,13 @@
                      Width="180"
                      BorderThickness="2">
             </TextBox>
-            <TextBox x:Name="txtUserPassword"
+            <PasswordBox x:Name="txtUserPassword"
                      FontSize="15"
                      HorizontalAlignment="Center"
-                     Margin="0 25 0 0"
+                     Margin="0,25,0,0"
                      Width="180"
-                     BorderThickness="2">
-            </TextBox>
+                     BorderThickness="2"
+                     PasswordChar="*"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock x:Name="errorMessage"

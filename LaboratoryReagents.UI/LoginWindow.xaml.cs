@@ -1,7 +1,7 @@
 ﻿using LaboratoryReagents.DL.Models;
 using System.Windows;
 using System.Linq;
-using LaboratoryReagents.DL;
+using System.ComponentModel;
 using System.Collections.Generic;
 using LaboratoryReagents.BL.Services;
 
@@ -12,57 +12,73 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class LoginWindow : Window
     {
-        List<User> Users = new List<User>();
+        public event RoutedEventHandler btnLogInWindowLogIn_ClickHandler;
+        readonly List<User> Users = new List<User>();
+        public User loggedUser;
+        
+       
 
         public LoginWindow()
         {
             InitializeComponent();
 
-            
-
             UserManager userManager = new UserManager();
-
             Users = userManager.GetAll();
-
+            
         }
 
+
         
-        
+
         private void btnLogInWindowLogIn_Click(object sender, RoutedEventArgs e)
         {
             string givenUsername = txtUserName.Text;
-            string givenPassword = txtUserPassword.Text;
+            string givenPassword = txtUserPassword.Password;
 
-            if (txtUserName.Text.Length == 0)
+            if (txtUserName.Text.Length == 0 && txtUserPassword.Password.Length == 0)
             {
-                errorMessage.Text = "Please enter Username!";
+
                 txtUserName.Select(0, txtUserName.Text.Length);
                 txtUserName.Focus();
+
             }
-
-            CheckUser(givenUsername, givenPassword);
-        }
-
-        public bool CheckUser(string username, string password)
-        {
-            foreach (var user in Users)
+            else
             {
-                if (username != user.Username)
+                if (CheckUser(givenUsername, givenPassword))
                 {
-                    return false;
+                    btnLogInWindowLogIn_ClickHandler(sender, e);
                 }
-                if (password != user.Password)
-                {
-                    return false;
-                }
-                
 
 
             }
-            return true;
-            errorMessage.Text = "User name was not found!";
-            
+
         }
 
+        private bool CheckUser(string username, string password)
+        {
+            User selectedUser = Users.FirstOrDefault(u => u.Username == username); //ar First vietoj FirstOrDefault
+           
+            if (selectedUser.Username != username)
+            {
+                errorMessage.Text = "Incorrect Username";
+                return false;
+            }
+            if (selectedUser.Password != password)
+            {
+                errorMessage.Text = "Incorrect password";
+                return false;
+            }
+            errorMessage.Text = "Correct password";
+            loggedUser = selectedUser;
+            return true;
+
+          
+        }
+
+        private void logInWindowClosing(object sender, CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Hide();
+        }
     }
 }

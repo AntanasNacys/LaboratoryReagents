@@ -18,9 +18,9 @@ namespace LaboratoryReagents.UI
     /// <summary>
     /// Interaction logic for ReagentUserControl.xaml
     /// </summary>
-    public partial class ReagentUserControl : UserControl
+    public partial class AllReagentUserControl : UserControl
     {
-        public ReagentUserControl()
+        public AllReagentUserControl()
         {
             InitializeComponent();
         }
@@ -30,13 +30,23 @@ namespace LaboratoryReagents.UI
 
         }
 
-        private void btnAddReagent_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
         private void btnChangeQty_Click(object sender, RoutedEventArgs e)
         {
 
         }
+        private void btnChangeLoc_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btnAddReagent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void btnDeleteReagent_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }
