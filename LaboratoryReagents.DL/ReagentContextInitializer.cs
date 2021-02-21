@@ -10,27 +10,27 @@ namespace LaboratoryReagents.DL
         {
             List<ReagentName> reagentNames = new List<ReagentName>
             {
-                new ReagentName {Name = "Nickel(II) chloride hexahydrate"},
+                new ReagentName {Name = "Nickel(II) chloride hexahydrate, kg"},
                 new ReagentName {Name = "Sodium nitrite, kg" },
-                new ReagentName {Name = "Sodium hydroxide"},
-                new ReagentName {Name = "Oxalic acid"},
-                new ReagentName {Name = "Titanium(IV) oxide"},
-                new ReagentName {Name = "Potassium nitrate"},
-                new ReagentName {Name = "Sodium molybdate dihydrate "},
-                new ReagentName {Name = "Ammonium molybdate tetraHydrate"},
-                new ReagentName {Name = "Sodium nitrate}"},
-                new ReagentName {Name = "Ammmonium sulfate"},
-                new ReagentName {Name = "Zink nitrate hexahydrate"},
-                new ReagentName {Name = "Nickel(II) nitrate hexahydrate"},
-                new ReagentName {Name = "Sodium carbonate"},
-                new ReagentName {Name = "Borane-morpholine complex, 97%"},
-                new ReagentName {Name = "Potassium chloride solution"},
-                new ReagentName {Name = "Sulfuric acid"},
-                new ReagentName {Name = "Phosphoric acid"},
-                new ReagentName {Name = "Sodium borohydride"},
-                new ReagentName {Name = "Hydrazine hydrate"},
-                new ReagentName {Name = "Acetone"},
-                new ReagentName {Name = "Tin(II) chloride dihydrate"},
+                new ReagentName {Name = "Sodium hydroxide, kg"},
+                new ReagentName {Name = "Oxalic acid, kg"},
+                new ReagentName {Name = "Titanium(IV) oxide, kg"},
+                new ReagentName {Name = "Potassium nitrate, kg"},
+                new ReagentName {Name = "Sodium molybdate dihydrate, kg "},
+                new ReagentName {Name = "Ammonium molybdate tetraHydrate, kg"},
+                new ReagentName {Name = "Sodium nitrate, kg"},
+                new ReagentName {Name = "Ammmonium sulfate, kg"},
+                new ReagentName {Name = "Zink nitrate hexahydrate, kg"},
+                new ReagentName {Name = "Nickel(II) nitrate hexahydrate, kg"},
+                new ReagentName {Name = "Sodium carbonate, kg"},
+                new ReagentName {Name = "Borane-morpholine complex, 97%, l"},
+                new ReagentName {Name = "Potassium chloride solution, l"},
+                new ReagentName {Name = "Sulfuric acid, l"},
+                new ReagentName {Name = "Phosphoric acid, l"},
+                new ReagentName {Name = "Sodium borohydride, kg"},
+                new ReagentName {Name = "Hydrazine hydrate, kg"},
+                new ReagentName {Name = "Acetone, l"},
+                new ReagentName {Name = "Tin(II) chloride dihydrate, kg"},
 
 
             };
@@ -64,6 +64,10 @@ namespace LaboratoryReagents.DL
             context.ReagentNames.AddRange(reagentNames);
             context.Locations.AddRange(locations);
             context.Users.AddRange(users);
+
+            //List<ReagentEntry> reagentEntries = new List<ReagentEntry>();
+            //reagentNames.ForEach(x => reagentEntries.Add(new ReagentEntry { ReagentName = x, Comments = "", Location = locations[0], Quantity = 5 }));
+            //context.ReagentEntries.AddRange(reagentEntries);
         }
     }
 }

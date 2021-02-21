@@ -1,5 +1,6 @@
 ﻿using LaboratoryReagents.DL;
 using LaboratoryReagents.DL.Models;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -46,6 +47,26 @@ namespace LaboratoryReagents.BL.Services
                     .FirstOrDefault();
             }
             return nameEntry;
+        }
+        public List<ReagentName> GetAll()
+        {
+            List<ReagentName> reagentNamesList;
+            using (var ctx = new ReagentContext())
+            {
+                reagentNamesList = ctx.ReagentNames
+                    .ToList();
+
+            }
+            return reagentNamesList;
+        }
+        public ReagentName GetByName(string reagentName)
+        {
+            ReagentName reagentNameEntity;
+            using (var context = new ReagentContext())
+            {
+                reagentNameEntity = context.ReagentNames.Where(z => z.Name == reagentName).FirstOrDefault();
+            }
+            return reagentNameEntity;
         }
     }
 }

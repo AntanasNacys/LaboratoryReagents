@@ -13,7 +13,7 @@ namespace LaboratoryReagents.UI
     public partial class LoginWindow : Window
     {
         public event RoutedEventHandler btnLogInWindowLogIn_ClickHandler;
-        readonly List<User> Users = new List<User>();
+        private List<User> Users = new List<User>();
         public User loggedUser;
         
        
@@ -21,10 +21,6 @@ namespace LaboratoryReagents.UI
         public LoginWindow()
         {
             InitializeComponent();
-
-            UserManager userManager = new UserManager();
-            Users = userManager.GetAll();
-            
         }
 
 
@@ -32,6 +28,8 @@ namespace LaboratoryReagents.UI
 
         private void btnLogInWindowLogIn_Click(object sender, RoutedEventArgs e)
         {
+            UserManager userManager = new UserManager();
+            Users = userManager.GetAll();
             string givenUsername = txtUserName.Text;
             string givenPassword = txtUserPassword.Password;
 
@@ -47,6 +45,7 @@ namespace LaboratoryReagents.UI
                 if (CheckUser(givenUsername, givenPassword))
                 {
                     btnLogInWindowLogIn_ClickHandler(sender, e);
+
                 }
 
 

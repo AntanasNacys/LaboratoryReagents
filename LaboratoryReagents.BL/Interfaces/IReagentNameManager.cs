@@ -1,4 +1,5 @@
 ﻿using LaboratoryReagents.DL.Models;
+using System.Collections.Generic;
 
 namespace LaboratoryReagents.BL.Services
 {
@@ -6,6 +7,8 @@ namespace LaboratoryReagents.BL.Services
     {
         int AddReagentName(ReagentName nameEntry);
         void DeleteReagentName(int entryKey);
+        List<ReagentName> GetAll();
+        ReagentName GetByName(string reagentName);
         ReagentName GetReagentName(int entryKey);
         void UpdateReagentName(ReagentName nameEntry);
     }

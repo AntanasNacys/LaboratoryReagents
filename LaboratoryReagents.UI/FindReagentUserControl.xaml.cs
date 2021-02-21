@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LaboratoryReagents.DL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,12 +21,30 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class FindReagentUserControl : UserControl
     {
+        private List<ReagentEntry> reagentEntries;
         public FindReagentUserControl()
         {
             InitializeComponent();
         }
 
         private void comboBoxChooseReagent_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<ReagentName> reagentNames = reagentEntries
+                .Select(x => x.ReagentName)
+                .Distinct()
+                .ToList();
+
+            comboBoxChooseReagent.ItemsSource = reagentNames
+                .Select(x => x.ReagentEntries)
+                .ToList();
+        }
+
+        private void comboBoxChooseReagent_DropDownOpened(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxChooseReagent_DropDownClosed(object sender, EventArgs e)
         {
 
         }

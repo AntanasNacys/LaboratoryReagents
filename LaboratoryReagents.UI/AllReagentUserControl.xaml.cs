@@ -1,8 +1,10 @@
-﻿using System;
+﻿using LaboratoryReagents.BL.Models;
+using LaboratoryReagents.BL.Services;
+using LaboratoryReagents.DL;
+using LaboratoryReagents.DL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -20,33 +22,54 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class AllReagentUserControl : UserControl
     {
+        public event SelectionChangedEventHandler dataGridReagents_SelectionChangedClickHandler;
+        //private List<ReagentEntry> dataGridReagents;
+
+        private IReagentUIViewManager reagentUIViewManager;
+        private List<ReagentUIView> reagentUIViews;
         public AllReagentUserControl()
         {
             InitializeComponent();
-        }
+            
 
-        private void dataGridReagents_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+
+        }
+        public void SetDataGridValues()
         {
+            reagentUIViewManager = new ReagentUIViewManager();
+            reagentUIViews = reagentUIViewManager.GetAll();
+            dataGridReagents.ItemsSource = reagentUIViews;
+            //priskirt datagridui reiksmes
+            //reikes issikviest, kad visas reiksmes is duombazes perverstu i reagentUIView.
+            //dgBudget.ItemsSource = _transactionViewModels;
+
+            /*using (var ctx = new ReagentContext())
+            {
+                var list = reagentEntryManager.GetAllReagents();
+                dataGridReagents.ItemsSource = list
+                    .Select(x => new {DateTime = DateTime.Now,
+                    ReagentName = x.ReagentName.Name,
+                    Location = x.Location.LocationName,
+                    Quantity = x.Quantity,
+                    Comments = x.Comments});
+
+                dataGridReagents.Items.Refresh();
+
+            }*/
 
         }
 
-        private void btnChangeQty_Click(object sender, RoutedEventArgs e)
+        public void SetDataGridValuesForLab(Location location)
         {
-
+            reagentUIViewManager = new ReagentUIViewManager();
+            reagentUIViews = reagentUIViewManager.GetReagentsByLocation(location);
+            dataGridReagents.ItemsSource = reagentUIViews;
         }
-        private void btnChangeLoc_Click(object sender, RoutedEventArgs e)
+        public void dataGridReagents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            dataGridReagents_SelectionChangedClickHandler(sender, e);
         }
-        private void btnAddReagent_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void btnDeleteReagent_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
 
     }
 }

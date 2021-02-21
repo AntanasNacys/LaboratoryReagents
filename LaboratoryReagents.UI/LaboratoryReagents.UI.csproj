@@ -65,6 +65,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddDeleteUserControl.xaml.cs">
+      <DependentUpon>AddDeleteUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeQtyLocUserControl.xaml.cs">
+      <DependentUpon>ChangeQtyLocUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FindInLabUserControl.xaml.cs">
       <DependentUpon>FindInLabUserControl.xaml</DependentUpon>
     </Compile>
@@ -74,6 +80,17 @@
     <Compile Include="AllReagentUserControl.xaml.cs">
       <DependentUpon>AllReagentUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SaveChangesUserControl.xaml.cs">
+      <DependentUpon>SaveChangesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddDeleteUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeQtyLocUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FindInLabUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AllReagentUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SaveChangesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

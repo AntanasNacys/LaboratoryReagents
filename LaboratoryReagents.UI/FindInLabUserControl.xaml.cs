@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LaboratoryReagents.BL.Services;
+using LaboratoryReagents.DL.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,32 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class FindInLabUserControl : UserControl
     {
+        public event RoutedEventHandler comboBoxChooseLab_DropDownClosedHandler;
+        private List<ReagentEntry> reagentEntries;
+        private List<Location> locations;
+        private ILocationManager locationManager;
+        private Location selectedLocation;
+
         public FindInLabUserControl()
         {
             InitializeComponent();
         }
 
-        private void comboBoxChooseLab_SelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void comboBoxChooseLab_DropDownOpened(object sender, EventArgs e)
         {
+            locationManager = new LocationManager();
+            locations = locationManager.GetAll();
+            comboBoxChooseLab.ItemsSource = locations.Select(x => x.LocationName);
+        }
+
+        private void comboBoxChooseLab_DropDownClosed(object sender, EventArgs e)
+        {
+            selectedLocation = locationManager.GetByLocation(comboBoxChooseLab.SelectedItem.ToString());
+            //comboBoxChooseLab_DropDownClosedHandler(selectedLocation, e);
 
         }
+
+
     }
 }

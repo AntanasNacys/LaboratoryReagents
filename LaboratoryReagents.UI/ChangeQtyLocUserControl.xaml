@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="LaboratoryReagents.UI.ChangeQtyLocUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LaboratoryReagents.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="650">
+    <Grid>
+        <StackPanel x:Name="stackPanelButtonsQtyLoc"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Orientation="Vertical"
+                    Margin="0 10 0 0"
+                    Width="90"
+                    Height="300">
+            <Button Content="Change Qty."
+                    Height="40"
+                    Width="80"
+                    Margin="0 10 0 0"
+                    Click="btnChangeQty_Click">
+            </Button>
+            <Button Content="Change Loc."
+                    Height="40"
+                    Width="80"
+                    Margin="0 10 0 0"
+                    Click="btnChangeLoc_Click">
+            </Button>
+            <TextBox x:Name="textBoxQuantity"
+                     Height="30"
+                     Width="80"
+                     Margin="0 10 0 0"></TextBox>
+            <ComboBox x:Name="comboBoxLocation"
+                      Height="30"
+                      Width="80"
+                      Margin="0 10 0 0"
+                      DropDownClosed="comboBoxLocation_DropDownClosed"
+                      DropDownOpened="comboBoxLocation_DropDownOpened">
+                
+            </ComboBox>
+            
+        </StackPanel>
+        
+
+    </Grid>
+</UserControl>

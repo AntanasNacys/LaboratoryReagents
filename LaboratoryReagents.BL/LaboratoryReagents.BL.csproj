@@ -52,12 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Models\ReagentUIView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IReagentEntryManager.cs" />
     <Compile Include="Interfaces\IUserManager.cs" />
     <Compile Include="Interfaces\IReagentNameManager.cs" />
+    <Compile Include="Interfaces\IReagentUIViewManager.cs" />
+    <Compile Include="Interfaces\ILocationManager.cs" />
+    <Compile Include="Services\LocationManager.cs" />
     <Compile Include="Services\ReagentEntryManager.cs" />
     <Compile Include="Services\ReagentNameManager.cs" />
+    <Compile Include="Services\ReagentUIViewManager.cs" />
     <Compile Include="Services\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,9 +75,7 @@
       <Name>LaboratoryReagents.DL</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
