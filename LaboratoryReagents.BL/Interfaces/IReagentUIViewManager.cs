@@ -7,7 +7,7 @@ namespace LaboratoryReagents.BL.Services
     public interface IReagentUIViewManager
     {
         List<ReagentUIView> GetAll();
-        List<ReagentUIView> GetReagentsByLocation(Location location);
-        List<ReagentUIView> GetReagentsByName(ReagentName reagentName);
+        List<ReagentUIView> GetReagentsByLocation(string location);
+        List<ReagentUIView> GetReagentsByName(string reagentName);
     }
 }

@@ -11,18 +11,17 @@
         
         
         <DataGrid x:Name="dataGridReagents" 
-                  Grid.Column="0"
-                  Grid.Row="0"
-                  
                   SelectionChanged="dataGridReagents_SelectionChanged" 
                   IsReadOnly="True"
                   SelectionMode="Single"
+                  
                   AutoGenerateColumns="False"
                   CanUserResizeRows="False"
                   CanUserReorderColumns="False"
                   CanUserResizeColumns="True"
                   CanUserSortColumns="False"
                   Margin="8,0,7,0">
+            
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Date" Binding="{Binding DateTime}" Width="80"></DataGridTextColumn>
                 <DataGridTextColumn Header="Reagent name" Binding="{Binding ReagentName}" Width="*"></DataGridTextColumn>

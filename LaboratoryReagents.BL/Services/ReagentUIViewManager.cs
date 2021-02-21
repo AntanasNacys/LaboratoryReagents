@@ -17,10 +17,13 @@ namespace LaboratoryReagents.BL.Services
         {
             reagentEntryManager = new ReagentEntryManager();
         }
-        public List<ReagentUIView> GetReagentsByName(ReagentName reagentName)
+        public List<ReagentUIView> GetReagentsByName(string reagentName)
         {
             List<ReagentUIView> reagentUIViews = new List<ReagentUIView>();
-            List<ReagentEntry> reagentEntries = reagentEntryManager.GetAllReagents();
+            List<ReagentEntry> reagentEntries = reagentEntryManager
+                .GetAllReagents()
+                .Where(x => x.ReagentName.Name == reagentName)
+                .ToList();
 
             foreach (var reagentEntry in reagentEntries)
             {
@@ -37,10 +40,13 @@ namespace LaboratoryReagents.BL.Services
 
 
         }
-        public List<ReagentUIView> GetReagentsByLocation(Location location)
+        public List<ReagentUIView> GetReagentsByLocation(string location)
         {
             List<ReagentUIView> reagentUIViews = new List<ReagentUIView>();
-            List<ReagentEntry> reagentEntries = reagentEntryManager.GetAllReagents().Where(x => x.Location == location).ToList(); ;
+            List<ReagentEntry> reagentEntries = reagentEntryManager
+                .GetAllReagents()
+                .Where(x => x.Location.LocationName == location)
+                .ToList();
 
             foreach (var reagentEntry in reagentEntries)
             {

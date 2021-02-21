@@ -36,10 +36,21 @@
                       Height="30"
                       Width="80"
                       Margin="0 10 0 0"
-                      DropDownClosed="comboBoxLocation_DropDownClosed"
-                      DropDownOpened="comboBoxLocation_DropDownOpened">
+                      >
                 
             </ComboBox>
+            <Button x:Name="btnSave"
+                    Height="25"
+                    Width="80"
+                    Content="Save"
+                    Margin="0 5 0 0"
+                    Click="btnSave_Click"></Button>
+            <Button x:Name="btnCancel"
+                    Height="25"
+                    Width="80"
+                    Content="Cancel"
+                    Margin="0 5 0 0"
+                    Click="btnCancel_Click"></Button>
             
         </StackPanel>
         

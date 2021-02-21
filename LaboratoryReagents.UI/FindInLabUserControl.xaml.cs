@@ -22,11 +22,11 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class FindInLabUserControl : UserControl
     {
-        public event RoutedEventHandler comboBoxChooseLab_DropDownClosedHandler;
+        public event EventHandler comboBoxChooseLab_DropDownClosedHandler;
         private List<ReagentEntry> reagentEntries;
         private List<Location> locations;
         private ILocationManager locationManager;
-        private Location selectedLocation;
+        public string selectedLocation;
 
         public FindInLabUserControl()
         {
@@ -43,8 +43,8 @@ namespace LaboratoryReagents.UI
 
         private void comboBoxChooseLab_DropDownClosed(object sender, EventArgs e)
         {
-            selectedLocation = locationManager.GetByLocation(comboBoxChooseLab.SelectedItem.ToString());
-            //comboBoxChooseLab_DropDownClosedHandler(selectedLocation, e);
+            selectedLocation = comboBoxChooseLab.SelectedItem.ToString();
+            comboBoxChooseLab_DropDownClosedHandler(sender, e);
 
         }
 

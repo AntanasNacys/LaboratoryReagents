@@ -60,7 +60,7 @@ namespace LaboratoryReagents.UI
 
         }
 
-        public void SetDataGridValuesForLab(Location location)
+        public void SetDataGridValuesForLab(string location)
         {
             reagentUIViewManager = new ReagentUIViewManager();
             reagentUIViews = reagentUIViewManager.GetReagentsByLocation(location);
@@ -68,6 +68,7 @@ namespace LaboratoryReagents.UI
         }
         public void dataGridReagents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+
             dataGridReagents_SelectionChangedClickHandler(sender, e);
         }
 

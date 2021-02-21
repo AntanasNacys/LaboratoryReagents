@@ -1,5 +1,6 @@
 ﻿using LaboratoryReagents.BL.Models;
 using LaboratoryReagents.DL.Models;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -30,6 +31,7 @@ namespace LaboratoryReagents.UI
             AddDeleteUserControl.btnDelete_ClickHandler += RefreshTable;
             AllReagentUserControl.dataGridReagents_SelectionChangedClickHandler += SelectionChanged;
             FindInLabUserControl.comboBoxChooseLab_DropDownClosedHandler += ShowInLab;
+            ChangeQtyLocUserControl.btnSave_ClickHandler += RefreshTable;
 
 
 
@@ -44,9 +46,10 @@ namespace LaboratoryReagents.UI
             FindInLabUserControl.Visibility = Visibility.Hidden;
             AddDeleteUserControl.Visibility = Visibility.Hidden;
             ChangeQtyLocUserControl.Visibility = Visibility.Hidden;
-            
+            AllReagentUserControl.dataGridReagents.ItemsSource = null;
 
-            
+
+
         }
 
         private void btnFindInLab_Click(object sender, RoutedEventArgs e)
@@ -56,6 +59,7 @@ namespace LaboratoryReagents.UI
             FindReagentUserControl.Visibility = Visibility.Hidden;
             AddDeleteUserControl.Visibility = Visibility.Hidden;
             ChangeQtyLocUserControl.Visibility = Visibility.Hidden;
+            AllReagentUserControl.dataGridReagents.ItemsSource = null;
         }
 
         private void btnAllReagents_Click(object sender, RoutedEventArgs e)
@@ -70,6 +74,7 @@ namespace LaboratoryReagents.UI
                 FindInLabUserControl.Visibility = Visibility.Hidden;
                 //padaryti kad refreshintu datagrid 
                 AllReagentUserControl.SetDataGridValues();
+
 
             }
             else
@@ -94,6 +99,8 @@ namespace LaboratoryReagents.UI
             if (AllReagentUserControl.dataGridReagents.SelectedItem != null)
             {
                 AddDeleteUserControl.SelectedReagentEntry = AddDeleteUserControl.reagentEntryManager.GetReagent(((ReagentUIView)AllReagentUserControl.dataGridReagents.SelectedItem).ReagentId);
+                ChangeQtyLocUserControl.SelectedReagentEntry = AddDeleteUserControl.reagentEntryManager.GetReagent(((ReagentUIView)AllReagentUserControl.dataGridReagents.SelectedItem).ReagentId);
+                ChangeQtyLocUserControl.SetValues();
                 RefreshTable(sender,e);
             }
         }
@@ -108,9 +115,9 @@ namespace LaboratoryReagents.UI
             
 
         }
-        private void ShowInLab(object sender, RoutedEventArgs e)
+        private void ShowInLab(object sender, EventArgs e)
         {
-            Location location = (Location)sender;
+            string location = FindInLabUserControl.selectedLocation;
             AllReagentUserControl.SetDataGridValuesForLab(location);
         }
     }

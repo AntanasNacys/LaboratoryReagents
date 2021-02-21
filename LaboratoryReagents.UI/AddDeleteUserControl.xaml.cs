@@ -94,7 +94,8 @@ namespace LaboratoryReagents.UI
                 ReagentNameId = selectedReagentName.ReagentNameId,
                 InsertionDate = DateTime.Now,
                 LocationId = selectedLocation.LocationId,
-                Quantity = Convert.ToInt32(textBoxQuantity.Text)
+                Quantity = Convert.ToInt32(textBoxQuantity.Text),
+                //Comments = 
             };
             reagentEntryManager.AddEntry(reagentEntry);
             comboBoxReagentName.SelectedItem = null;

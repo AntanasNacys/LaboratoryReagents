@@ -51,6 +51,7 @@ namespace LaboratoryReagents.BL.Services
                 entry = ctx.ReagentEntries
                     .Where(x => x.ReagentId == entryKey)
                     .Include(x => x.ReagentName)
+                    .Include(x=>x.Location)
                     .FirstOrDefault();
             }
             return entry;
