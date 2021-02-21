@@ -15,16 +15,11 @@ namespace LaboratoryReagents.UI
         public event RoutedEventHandler btnLogInWindowLogIn_ClickHandler;
         private List<User> Users = new List<User>();
         public User loggedUser;
-        
-       
 
         public LoginWindow()
         {
             InitializeComponent();
         }
-
-
-        
 
         private void btnLogInWindowLogIn_Click(object sender, RoutedEventArgs e)
         {
@@ -35,10 +30,7 @@ namespace LaboratoryReagents.UI
 
             if (txtUserName.Text.Length == 0 && txtUserPassword.Password.Length == 0)
             {
-
-                txtUserName.Select(0, txtUserName.Text.Length);
                 txtUserName.Focus();
-
             }
             else
             {
@@ -47,17 +39,14 @@ namespace LaboratoryReagents.UI
                     btnLogInWindowLogIn_ClickHandler(sender, e);
 
                 }
-
-
             }
-
         }
 
         private bool CheckUser(string username, string password)
         {
-            User selectedUser = Users.FirstOrDefault(u => u.Username == username); //ar First vietoj FirstOrDefault
-           
-            if (selectedUser.Username != username)
+            User selectedUser = Users.FirstOrDefault(u => u.Username == username); 
+            
+            if (selectedUser == null)
             {
                 errorMessage.Text = "Incorrect Username";
                 return false;
@@ -70,8 +59,6 @@ namespace LaboratoryReagents.UI
             errorMessage.Text = "Correct password";
             loggedUser = selectedUser;
             return true;
-
-          
         }
 
         private void logInWindowClosing(object sender, CancelEventArgs e)

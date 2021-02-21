@@ -13,7 +13,7 @@
                         VerticalAlignment="Top"
                         Margin="0 0 0 0"
                         Width="100"
-                        Height="320">
+                        Height="430">
             <Button Content="Add reagent"
                     Width="90"
                     Height="40"
@@ -24,43 +24,70 @@
             <Button Content="Delete reagent"
                     Width="90"
                     Height="40"
-                    Margin="0 10 5 0"
+                    Margin="0 5 5 0"
                     HorizontalAlignment="Right"
                     Click="btnDeleteReagent_Click">
             </Button>
+            <TextBlock x:Name="textBlock_ReagentName"
+                       Text="Reagent Name"
+                       HorizontalAlignment="Center"
+                       Margin="0 10 0 0">
+            </TextBlock>
             <ComboBox x:Name="comboBoxReagentName"
                       Height="30"
                       Width="90"
-                      Margin="0 10 0 0"
+                      Margin="0 0 0 0"
                       DropDownOpened="comboBoxReagentName_DropDownOpened"
                       DropDownClosed="comboBoxReagentName_DropDownClosed">
                 
             </ComboBox>
+            <TextBlock x:Name="textBlock_Location"
+                       Text="Location"
+                       HorizontalAlignment="Center"
+                       Margin="0 5 0 0">
+            </TextBlock>
             <ComboBox x:Name="comboBoxLocation"
                       Height="30"
                       Width="90"
-                      Margin="0 10 0 0"
+                      Margin="0 0 0 0"
                       DropDownOpened="comboBoxLocation_DropDownOpened"
                       DropDownClosed="comboBoxLocation_DropDownClosed">
                 
             </ComboBox>
+            <TextBlock x:Name="textBlock_Quantity"
+                       Text="Quantity"
+                       HorizontalAlignment="Center"
+                       Margin="0 5 0 0">
+            </TextBlock>
             <TextBox x:Name="textBoxQuantity"
                       Height="30"
                       Width="90"
-                      Margin="0 10 0 0"
+                      Margin="0 0 0 0"
                       >
+            </TextBox>
+            <TextBlock x:Name="textBlock_Comments"
+                       Text="Comments"
+                       HorizontalAlignment="Center"
+                       Margin="0 5 0 0">
+            </TextBlock>
+
+            <TextBox x:Name="textBoxComments"
+                     Height="30"
+                     Width="90"
+                     Margin="0 0 0 0">
+
             </TextBox>
             <Button x:Name="btnSave"
                     Height="25"
                     Width="90"
                     Content="Save"
-                    Margin="0 5 0 0"
+                    Margin="0 10 0 0"
                     Click="btnSave_Click"></Button>
             <Button x:Name="btnCancel"
                     Height="25"
                     Width="90"
                     Content="Cancel"
-                    Margin="0 5 0 0"
+                    Margin="0 10 0 0"
                     Click="btnCancel_Click"></Button>
         </StackPanel>
         

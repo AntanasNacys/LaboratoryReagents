@@ -66,10 +66,10 @@
         </StackPanel>
         <StackPanel Grid.Row="2">
             <TextBlock x:Name="errorMessage"
-                       Height="20"
+                       Height="30"
                        Width="100"
-                       Margin="0 20 0 0"
-                       OpacityMask="Red"></TextBlock>
+                       Margin="0 10 0 0"
+                       TextWrapping="Wrap"></TextBlock>
         </StackPanel>
         <Button x:Name="btnLogInWindowLogIn"
                 Content="Log In"

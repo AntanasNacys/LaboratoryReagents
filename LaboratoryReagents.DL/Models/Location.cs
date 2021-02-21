@@ -6,6 +6,7 @@ namespace LaboratoryReagents.DL.Models
     {
         [Key]
         public int LocationId { get; set; }
+        [MaxLength(20)]
         public string LocationName { get; set; }
     }
 }

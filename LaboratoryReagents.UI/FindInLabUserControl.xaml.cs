@@ -22,7 +22,6 @@ namespace LaboratoryReagents.UI
             InitializeComponent();
         }
 
-
         private void comboBoxChooseLab_DropDownOpened(object sender, EventArgs e)
         {
             locationManager = new LocationManager();
@@ -34,7 +33,6 @@ namespace LaboratoryReagents.UI
         {
             selectedLocation = comboBoxChooseLab.SelectedItem.ToString();
             comboBoxChooseLab_DropDownClosedHandler(sender, e);
-
         }
 
 

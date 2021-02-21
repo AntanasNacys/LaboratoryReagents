@@ -15,8 +15,7 @@ namespace LaboratoryReagents.DL.Models
         public int LocationId { get; set; }
         public virtual Location Location { get; set; }
         public int Quantity { get; set; }
+        [MaxLength(50)]
         public string Comments { get; set; }
-        //public DateTime DateTime { get; set; }
-       
     }
 }

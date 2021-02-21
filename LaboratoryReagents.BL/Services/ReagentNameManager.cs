@@ -19,6 +19,7 @@ namespace LaboratoryReagents.BL.Services
             }
             return entryKey;
         }
+
         public void DeleteReagentName(int entryKey)
         {
             ReagentName nameEntry;
@@ -29,6 +30,7 @@ namespace LaboratoryReagents.BL.Services
                 ctx.SaveChanges();
             }
         }
+
         public void UpdateReagentName(ReagentName nameEntry)
         {
             using (var ctx = new ReagentContext())
@@ -37,6 +39,7 @@ namespace LaboratoryReagents.BL.Services
                 ctx.SaveChanges();
             }
         }
+
         public ReagentName GetReagentName(int entryKey)
         {
             ReagentName nameEntry;
@@ -48,6 +51,7 @@ namespace LaboratoryReagents.BL.Services
             }
             return nameEntry;
         }
+
         public List<ReagentName> GetAll()
         {
             List<ReagentName> reagentNamesList;
@@ -59,12 +63,13 @@ namespace LaboratoryReagents.BL.Services
             }
             return reagentNamesList;
         }
+
         public ReagentName GetByName(string reagentName)
         {
             ReagentName reagentNameEntity;
             using (var context = new ReagentContext())
             {
-                reagentNameEntity = context.ReagentNames.Where(z => z.Name == reagentName).FirstOrDefault();
+                reagentNameEntity = context.ReagentNames.Where(x => x.Name == reagentName).FirstOrDefault();
             }
             return reagentNameEntity;
         }

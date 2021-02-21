@@ -15,8 +15,7 @@ namespace LaboratoryReagents.BL.Services
             List<Location> locationsList;
             using (var ctx = new ReagentContext())
             {
-                locationsList = ctx.Locations
-                    .ToList();
+                locationsList = ctx.Locations.ToList();
 
             }
             return locationsList;

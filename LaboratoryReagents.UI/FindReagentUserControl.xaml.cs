@@ -16,6 +16,7 @@ namespace LaboratoryReagents.UI
         private List<ReagentName> reagentNames;
         private IReagentNameManager reagentNameManager;
         public string selectedReagent;
+
         public FindReagentUserControl()
         {
             InitializeComponent();
