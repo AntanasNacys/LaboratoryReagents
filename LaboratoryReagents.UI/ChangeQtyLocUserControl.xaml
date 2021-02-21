@@ -16,29 +16,37 @@
                     Margin="0 10 0 0"
                     Width="90"
                     Height="300">
-            <Button Content="Change Qty."
+            <Button Content="Change Info."
                     Height="40"
                     Width="80"
                     Margin="0 10 0 0"
-                    Click="btnChangeQty_Click">
+                    Click="btnChangeInfo_Click">
             </Button>
-            <Button Content="Change Loc."
-                    Height="40"
-                    Width="80"
-                    Margin="0 10 0 0"
-                    Click="btnChangeLoc_Click">
-            </Button>
-            <TextBox x:Name="textBoxQuantity"
-                     Height="30"
-                     Width="80"
-                     Margin="0 10 0 0"></TextBox>
+            <TextBlock x:Name="textBlockSelectedReagent"
+                   Height="25"
+                   Width="80"
+                   Margin="0 5 0 0">
+            </TextBlock>
             <ComboBox x:Name="comboBoxLocation"
                       Height="30"
                       Width="80"
                       Margin="0 10 0 0"
                       >
-                
+
             </ComboBox>
+            <TextBox x:Name="textBoxQuantity"
+                     Height="30"
+                     Width="80"
+                     Margin="0 10 0 0">
+                
+            </TextBox>
+            <TextBox x:Name="textBoxComments"
+                     Height="30"
+                     Width="80"
+                     Margin="0 10 0 0">
+                
+            </TextBox>
+            
             <Button x:Name="btnSave"
                     Height="25"
                     Width="80"
@@ -50,7 +58,10 @@
                     Width="80"
                     Content="Cancel"
                     Margin="0 5 0 0"
-                    Click="btnCancel_Click"></Button>
+                    Click="btnCancel_Click">
+                
+            </Button>
+            
             
         </StackPanel>
         

@@ -31,6 +31,7 @@ namespace LaboratoryReagents.UI
             AddDeleteUserControl.btnDelete_ClickHandler += RefreshTable;
             AllReagentUserControl.dataGridReagents_SelectionChangedClickHandler += SelectionChanged;
             FindInLabUserControl.comboBoxChooseLab_DropDownClosedHandler += ShowInLab;
+            FindReagentUserControl.comboBoxChooseReagent_DropDownClosedHandler += ShowReagent;
             ChangeQtyLocUserControl.btnSave_ClickHandler += RefreshTable;
 
 
@@ -72,7 +73,6 @@ namespace LaboratoryReagents.UI
                 ChangeQtyLocUserControl.Visibility = Visibility.Visible;
                 FindReagentUserControl.Visibility = Visibility.Hidden;
                 FindInLabUserControl.Visibility = Visibility.Hidden;
-                //padaryti kad refreshintu datagrid 
                 AllReagentUserControl.SetDataGridValues();
 
 
@@ -119,6 +119,11 @@ namespace LaboratoryReagents.UI
         {
             string location = FindInLabUserControl.selectedLocation;
             AllReagentUserControl.SetDataGridValuesForLab(location);
+        }
+        private void ShowReagent(object sender, EventArgs e)
+        {
+            string reagent = FindReagentUserControl.selectedReagent;
+            AllReagentUserControl.SetDataGridValuesForReagent(reagent);
         }
     }
 }

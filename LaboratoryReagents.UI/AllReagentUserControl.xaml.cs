@@ -66,6 +66,12 @@ namespace LaboratoryReagents.UI
             reagentUIViews = reagentUIViewManager.GetReagentsByLocation(location);
             dataGridReagents.ItemsSource = reagentUIViews;
         }
+        public void SetDataGridValuesForReagent(string reagentName)
+        {
+            reagentUIViewManager = new ReagentUIViewManager();
+            reagentUIViews = reagentUIViewManager.GetReagentsByName(reagentName);
+            dataGridReagents.ItemsSource = reagentUIViews;
+        }
         public void dataGridReagents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

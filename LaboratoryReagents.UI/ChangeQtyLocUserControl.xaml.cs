@@ -29,6 +29,7 @@ namespace LaboratoryReagents.UI
         public ChangeQtyLocUserControl()
         {
             InitializeComponent();
+            HidePanel();
             locationManager = new LocationManager();
             reagentEntryManager = new ReagentEntryManager();
 
@@ -38,14 +39,11 @@ namespace LaboratoryReagents.UI
             comboBoxLocation.ItemsSource = locationManager.GetAll().Select(x => x.LocationName).ToList();
             comboBoxLocation.SelectedItem = SelectedReagentEntry.Location.LocationName;
             textBoxQuantity.Text = SelectedReagentEntry.Quantity.ToString();
+            textBlockSelectedReagent.Text = SelectedReagentEntry.ReagentName.Name;
         }
-        private void btnChangeQty_Click(object sender, RoutedEventArgs e)
+        private void btnChangeInfo_Click(object sender, RoutedEventArgs e)
         {
             ShowPanel();
-        }
-        private void btnChangeLoc_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
 
@@ -62,7 +60,9 @@ namespace LaboratoryReagents.UI
                     InsertionDate = SelectedReagentEntry.InsertionDate,
                     LocationId = locationManager.GetByLocation(comboBoxLocation.SelectedItem.ToString()).LocationId,
                     Quantity = Convert.ToInt32(textBoxQuantity.Text),
-                    Comments = SelectedReagentEntry.Comments
+                    Comments = textBoxComments.Text,
+                    
+                    
                 };
                 reagentEntryManager.UpdateEntry(newReagentEntry);
                 btnSave_ClickHandler(sender, e);
@@ -76,6 +76,8 @@ namespace LaboratoryReagents.UI
         {
             comboBoxLocation.SelectedItem = null;
             textBoxQuantity.Text = string.Empty;
+            textBlockSelectedReagent.Text = string.Empty;
+            textBoxComments.Text = string.Empty;
             HidePanel();
         }
         private void ShowPanel()
@@ -84,6 +86,8 @@ namespace LaboratoryReagents.UI
             textBoxQuantity.Visibility = Visibility.Visible;
             btnSave.Visibility = Visibility.Visible;
             btnCancel.Visibility = Visibility.Visible;
+            textBlockSelectedReagent.Visibility = Visibility.Visible;
+            textBoxComments.Visibility = Visibility.Visible;
 
         }
         private void HidePanel()
@@ -92,6 +96,8 @@ namespace LaboratoryReagents.UI
             textBoxQuantity.Visibility = Visibility.Hidden;
             btnSave.Visibility = Visibility.Hidden;
             btnCancel.Visibility = Visibility.Hidden;
+            textBlockSelectedReagent.Visibility = Visibility.Hidden;
+            textBoxComments.Visibility = Visibility.Hidden;
         }
     }
 

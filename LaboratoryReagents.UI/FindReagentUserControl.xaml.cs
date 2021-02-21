@@ -1,18 +1,9 @@
-﻿using LaboratoryReagents.DL.Models;
+﻿using LaboratoryReagents.BL.Services;
+using LaboratoryReagents.DL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LaboratoryReagents.UI
 {
@@ -21,32 +12,26 @@ namespace LaboratoryReagents.UI
     /// </summary>
     public partial class FindReagentUserControl : UserControl
     {
-        private List<ReagentEntry> reagentEntries;
+        public event EventHandler comboBoxChooseReagent_DropDownClosedHandler;
+        private List<ReagentName> reagentNames;
+        private IReagentNameManager reagentNameManager;
+        public string selectedReagent;
         public FindReagentUserControl()
         {
             InitializeComponent();
         }
 
-        private void comboBoxChooseReagent_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            List<ReagentName> reagentNames = reagentEntries
-                .Select(x => x.ReagentName)
-                .Distinct()
-                .ToList();
-
-            comboBoxChooseReagent.ItemsSource = reagentNames
-                .Select(x => x.ReagentEntries)
-                .ToList();
-        }
-
         private void comboBoxChooseReagent_DropDownOpened(object sender, EventArgs e)
         {
-
+            reagentNameManager = new ReagentNameManager();
+            reagentNames = reagentNameManager.GetAll();
+            comboBoxChooseReagent.ItemsSource = reagentNames.Select(x => x.Name);
         }
 
         private void comboBoxChooseReagent_DropDownClosed(object sender, EventArgs e)
         {
-
+            selectedReagent = comboBoxChooseReagent.SelectedItem.ToString();
+            comboBoxChooseReagent_DropDownClosedHandler(sender, e);
         }
     }
 }
