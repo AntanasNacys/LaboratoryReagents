@@ -23,41 +23,19 @@ namespace LaboratoryReagents.UI
     public partial class AllReagentUserControl : UserControl
     {
         public event SelectionChangedEventHandler dataGridReagents_SelectionChangedClickHandler;
-        //private List<ReagentEntry> dataGridReagents;
-
         private IReagentUIViewManager reagentUIViewManager;
         private List<ReagentUIView> reagentUIViews;
+
         public AllReagentUserControl()
         {
             InitializeComponent();
-            
-
-
-
         }
+
         public void SetDataGridValues()
         {
             reagentUIViewManager = new ReagentUIViewManager();
             reagentUIViews = reagentUIViewManager.GetAll();
             dataGridReagents.ItemsSource = reagentUIViews;
-            //priskirt datagridui reiksmes
-            //reikes issikviest, kad visas reiksmes is duombazes perverstu i reagentUIView.
-            //dgBudget.ItemsSource = _transactionViewModels;
-
-            /*using (var ctx = new ReagentContext())
-            {
-                var list = reagentEntryManager.GetAllReagents();
-                dataGridReagents.ItemsSource = list
-                    .Select(x => new {DateTime = DateTime.Now,
-                    ReagentName = x.ReagentName.Name,
-                    Location = x.Location.LocationName,
-                    Quantity = x.Quantity,
-                    Comments = x.Comments});
-
-                dataGridReagents.Items.Refresh();
-
-            }*/
-
         }
 
         public void SetDataGridValuesForLab(string location)
@@ -66,12 +44,14 @@ namespace LaboratoryReagents.UI
             reagentUIViews = reagentUIViewManager.GetReagentsByLocation(location);
             dataGridReagents.ItemsSource = reagentUIViews;
         }
+
         public void SetDataGridValuesForReagent(string reagentName)
         {
             reagentUIViewManager = new ReagentUIViewManager();
             reagentUIViews = reagentUIViewManager.GetReagentsByName(reagentName);
             dataGridReagents.ItemsSource = reagentUIViews;
         }
+
         public void dataGridReagents_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

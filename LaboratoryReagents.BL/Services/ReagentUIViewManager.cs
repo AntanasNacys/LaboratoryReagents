@@ -7,13 +7,13 @@ namespace LaboratoryReagents.BL.Services
 {
     public class ReagentUIViewManager : IReagentUIViewManager
     {
-
         public ReagentEntryManager reagentEntryManager;
 
         public ReagentUIViewManager()
         {
             reagentEntryManager = new ReagentEntryManager();
         }
+
         public List<ReagentUIView> GetReagentsByName(string reagentName)
         {
             List<ReagentUIView> reagentUIViews = new List<ReagentUIView>();
@@ -33,7 +33,7 @@ namespace LaboratoryReagents.BL.Services
                 reagentUIView.Location = reagentEntry.Location.LocationName.ToString();
                 reagentUIViews.Add(reagentUIView);
             }
-            return reagentUIViews.OrderBy(z => z.ReagentName).ToList();
+            return reagentUIViews.OrderBy(x => x.ReagentName).ToList();
 
 
         }
@@ -56,7 +56,7 @@ namespace LaboratoryReagents.BL.Services
                 reagentUIView.Location = reagentEntry.Location.LocationName.ToString();
                 reagentUIViews.Add(reagentUIView);
             }
-            return reagentUIViews.OrderBy(z => z.Location).ToList();
+            return reagentUIViews.OrderBy(x => x.Location).ToList();
 
         }
 
@@ -76,7 +76,7 @@ namespace LaboratoryReagents.BL.Services
                 reagentUIView.Location = reagentEntry.Location.LocationName.ToString();
                 reagentUIViews.Add(reagentUIView);
             }
-            return reagentUIViews.OrderBy(z => z.ReagentName).ToList();
+            return reagentUIViews.OrderBy(x => x.ReagentName).ToList();
         }
 
 

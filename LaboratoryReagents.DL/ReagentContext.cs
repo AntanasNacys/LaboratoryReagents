@@ -14,6 +14,7 @@ namespace LaboratoryReagents.DL
         {
             Database.SetInitializer(new ReagentContextInitializer());
         }
+
         public DbSet<ReagentEntry> ReagentEntries { get; set; }
         public DbSet<ReagentName> ReagentNames { get; set; }
         public DbSet<Location> Locations { get; set; }

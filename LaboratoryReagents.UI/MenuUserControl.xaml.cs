@@ -53,8 +53,6 @@ namespace LaboratoryReagents.UI
                     loginWindow.btnLogInWindowLogIn_ClickHandler += LoggedUser;
 
                 }
-                
-                
             }
             else
             {
@@ -65,8 +63,6 @@ namespace LaboratoryReagents.UI
                 btnLogOut_ClickHandler(sender, e);
             }
         }
-
-       
 
         private void btnFindReagent_Click(object sender, RoutedEventArgs e)
         {
@@ -86,9 +82,7 @@ namespace LaboratoryReagents.UI
 
         private void LoggedUser(object sender, RoutedEventArgs e)
         {
-            
             btnLogInAndOut.Content = "Log Out";
-            
             isUserLogged = true;
             loginWindow.Visibility = Visibility.Hidden;
             UserOn = loginWindow.loggedUser;

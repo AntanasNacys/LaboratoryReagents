@@ -31,15 +31,12 @@ namespace LaboratoryReagents.DL
                 new ReagentName {Name = "Hydrazine hydrate, kg"},
                 new ReagentName {Name = "Acetone, l"},
                 new ReagentName {Name = "Tin(II) chloride dihydrate, kg"},
-
-
             };
             List<Location> locations = new List<Location>
             {
                 new Location {LocationName = "Warehouse"},
                 new Location {LocationName = "E201"},
                 new Location {LocationName = "E202"},
-                new Location {LocationName = "E203"},
                 new Location {LocationName = "E203"},
                 new Location {LocationName = "E204"},
                 new Location {LocationName = "E205"},
@@ -58,16 +55,12 @@ namespace LaboratoryReagents.DL
                 new User {Username = "IrenaS", Password = "IrenaS123", IsAdmin = false,},
                 new User {Username = "DainaU", Password = "DainaU123", IsAdmin = false,},
                 new User {Username = "RamintaS", Password = "RamintaS123", IsAdmin = false,},
-                new User {Username = "JolitaJ123", Password = "JolitaJ123", IsAdmin = false,},
+                new User {Username = "JolitaJ", Password = "JolitaJ123", IsAdmin = false,},
                 new User {Username = "TeofiliusK", Password = "TeofiliusK123", IsAdmin = false,},
             };
             context.ReagentNames.AddRange(reagentNames);
             context.Locations.AddRange(locations);
             context.Users.AddRange(users);
-
-            //List<ReagentEntry> reagentEntries = new List<ReagentEntry>();
-            //reagentNames.ForEach(x => reagentEntries.Add(new ReagentEntry { ReagentName = x, Comments = "", Location = locations[0], Quantity = 5 }));
-            //context.ReagentEntries.AddRange(reagentEntries);
         }
     }
 }

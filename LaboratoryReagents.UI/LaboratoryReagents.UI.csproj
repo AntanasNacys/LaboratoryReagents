@@ -80,9 +80,6 @@
     <Compile Include="AllReagentUserControl.xaml.cs">
       <DependentUpon>AllReagentUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SaveChangesUserControl.xaml.cs">
-      <DependentUpon>SaveChangesUserControl.xaml</DependentUpon>
-    </Compile>
     <Page Include="AddDeleteUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -123,10 +120,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AllReagentUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SaveChangesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
