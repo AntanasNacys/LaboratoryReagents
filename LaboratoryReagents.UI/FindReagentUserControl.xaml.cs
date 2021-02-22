@@ -3,6 +3,7 @@ using LaboratoryReagents.DL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace LaboratoryReagents.UI
@@ -31,8 +32,10 @@ namespace LaboratoryReagents.UI
 
         private void comboBoxChooseReagent_DropDownClosed(object sender, EventArgs e)
         {
-            selectedReagent = comboBoxChooseReagent.SelectedItem.ToString();
+            if (comboBoxChooseReagent.SelectedItem == null) MessageBox.Show("Reagent was not selected!");
+            else selectedReagent = comboBoxChooseReagent.SelectedItem.ToString();
             comboBoxChooseReagent_DropDownClosedHandler(sender, e);
+
         }
     }
 }

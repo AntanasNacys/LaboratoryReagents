@@ -75,13 +75,13 @@ namespace LaboratoryReagents.UI
         }
         private void comboBoxReagentName_DropDownClosed(object sender, EventArgs e)
         {
-            if (comboBoxReagentName != null)
-                selectedReagentName = reagentNameManager.GetByName(comboBoxReagentName.SelectedItem.ToString());
+            if (comboBoxReagentName.SelectedItem == null) MessageBox.Show("Reagent was not selected");
+            else selectedReagentName = reagentNameManager.GetByName(comboBoxReagentName.SelectedItem.ToString());
         }
         private void comboBoxLocation_DropDownClosed(object sender, EventArgs e)
         {
-            if (comboBoxLocation != null)
-                selectedLocation = locationManager.GetByLocation(comboBoxLocation.SelectedItem.ToString());
+            if (comboBoxLocation.SelectedItem == null) MessageBox.Show("Location was not selected");
+            else selectedLocation = locationManager.GetByLocation(comboBoxLocation.SelectedItem.ToString());
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
